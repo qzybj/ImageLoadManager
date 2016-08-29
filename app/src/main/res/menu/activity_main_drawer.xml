@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--单选的-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_fresco"
+            android:title="Fresco" />
+        <item
+            android:id="@+id/nav_imageload"
+            android:title="ImageLoad" />
+        <item
+            android:id="@+id/nav_picasso"
+            android:title="Picasso" />
+        <item
+            android:id="@+id/nav_glide"
+            android:title="Glide" />
+    </group>
+
+    <!--正常的-->
+    <!--<item android:title="ImageLoad">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_fresco"-->
+                <!--android:title="Fresco" />-->
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>
