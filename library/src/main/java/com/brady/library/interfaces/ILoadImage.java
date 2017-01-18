@@ -30,7 +30,7 @@ public interface ILoadImage {
 	 * @param errImgResId   加载错误时的图片
 	 * @param callback		加载图片结果回调
 	 */
-   void loadImage( ImageView iv, Object imageUrl, int loadImgResId, int errImgResId, ILoadImageCallback callback);
+   void loadImage( ImageView iv, Object imageUrl, int loadImgResId, int errImgResId, IImgLoadListener callback);
 
    /**
      * @param iv
@@ -41,7 +41,7 @@ public interface ILoadImage {
      * @param errImgResId   加载错误时的图片
      * @param callback		加载图片结果回调
      */
-    void loadImage(ImageView iv, Object imageUrl, int width, int height, Object loadImgResId, Object errImgResId,ILoadImageCallback callback);
+    void loadImage(ImageView iv, Object imageUrl, int width, int height, Object loadImgResId, Object errImgResId,IImgLoadListener callback);
 
 	
     /**
@@ -49,5 +49,5 @@ public interface ILoadImage {
      * @param imageUrl  支持的格式 sample：load(R.drawable.landing_screen); load("file:///android_asset/DvpvklR.png");load(new File(...))
      * @return
      */
-    boolean isSupportImageUrlType(Object imageUrl);
+    boolean isSupportImgUrlType(Object imageUrl);
 }

@@ -1,13 +1,12 @@
 package com.brady.imageloadmanage.module.aosp.imageloadimpl.picasso;
 
-import android.app.Application;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.widget.ImageView;
 import com.brady.library.interfaces.ILoadImage;
-import com.brady.library.interfaces.ILoadImageCallback;
+import com.brady.library.interfaces.IImgLoadListener;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestCreator;
@@ -31,12 +30,12 @@ public class PicassoHelper implements ILoadImage {
     }
 
     @Override
-    public void loadImage( ImageView iv, Object imageUrl, int loadImgResId, int errImgResId, ILoadImageCallback callback) {
+    public void loadImage( ImageView iv, Object imageUrl, int loadImgResId, int errImgResId, IImgLoadListener callback) {
         loadImage(mContext,iv,imageUrl,NONE,NONE,loadImgResId,errImgResId,false,null,callback);
     }
 
     @Override
-    public void loadImage( ImageView iv, Object imageUrl, int width, int height, Object loadImgResId, Object errImgResId, ILoadImageCallback callback) {
+    public void loadImage( ImageView iv, Object imageUrl, int width, int height, Object loadImgResId, Object errImgResId, IImgLoadListener callback) {
         loadImage(mContext,iv,imageUrl,width,height,loadImgResId,errImgResId,false,null,callback);
     }
 
@@ -53,7 +52,7 @@ public class PicassoHelper implements ILoadImage {
      * @param isTransform    是否加载动画
      * @param callback
      */
-    public void loadImage(Context con, ImageView iv, Object imageUrl, int width, int height, Object loadImgResId, Object errImgResId, boolean isTransform, Transformation transformation, final ILoadImageCallback callback) {
+    public void loadImage(Context con, ImageView iv, Object imageUrl, int width, int height, Object loadImgResId, Object errImgResId, boolean isTransform, Transformation transformation, final IImgLoadListener callback) {
         if(con!=null&&iv!=null){
             RequestCreator requestCreator =null;
             if(imageUrl instanceof String){
@@ -130,7 +129,7 @@ public class PicassoHelper implements ILoadImage {
     }
 
     @Override
-    public  boolean isSupportImageUrlType(Object imageUrl){
+    public  boolean isSupportImgUrlType(Object imageUrl){
         if(imageUrl instanceof String){
             return true;
         }
