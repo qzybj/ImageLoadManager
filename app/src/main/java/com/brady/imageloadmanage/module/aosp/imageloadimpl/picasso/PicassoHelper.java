@@ -16,14 +16,14 @@ import java.io.File;
 
 
 /**
- * Created by ZhangYuanBo on 2016/6/16.
+ * 基于Picasso的ILoadImage实现
  */
 public class PicassoHelper implements ILoadImage {
     private Context mContext;
 
     @Override
-    public void build(Application con) {
-        this.mContext = con.getApplicationContext();
+    public void build(Context con) {
+        this.mContext = con;
     }
 
     public void loadImage( ImageView iv, Object imageUrl, int loadImgResId) {
@@ -45,12 +45,12 @@ public class PicassoHelper implements ILoadImage {
      *  加载图片(Picasso)
      * @param con
      * @param iv
-     * @param imageUrl     支持的格式：除正常的imageurl字符串外，load(R.drawable.landing_screen); load("file:///android_asset/DvpvklR.png");load(new File(...))
-     * @param width     指定的图片宽
-     * @param height    指定的图片高
-     * @param loadImgResId 默认加载的图片
-     * @param errImgResId   加载错误时的图片
-     * @param isTransform   是否加载动画
+     * @param imageUrl       支持的格式：除正常的ImageUrl字符串外，load(R.drawable.icon); load("file:///android_asset/icon.png");load(new File(...))
+     * @param width          指定的图片宽
+     * @param height         指定的图片高
+     * @param loadImgResId   默认加载的图片
+     * @param errImgResId    加载错误时的图片
+     * @param isTransform    是否加载动画
      * @param callback
      */
     public void loadImage(Context con, ImageView iv, Object imageUrl, int width, int height, Object loadImgResId, Object errImgResId, boolean isTransform, Transformation transformation, final ILoadImageCallback callback) {

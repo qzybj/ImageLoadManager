@@ -16,6 +16,9 @@ public class LoadImageManager{
     private LoadImageManager(Application con, ILoadImage loadImage) {
         mContext = con.getApplicationContext();
         loadImageInstance = loadImage;
+        if(loadImageInstance!=null){
+            loadImageInstance.build(mContext);
+        }
     }
 
     public static void init(Application con, ILoadImage loadImage) {
@@ -30,4 +33,5 @@ public class LoadImageManager{
         }
         return instance.loadImageInstance;
     }
+
 }

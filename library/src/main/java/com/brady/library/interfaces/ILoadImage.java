@@ -1,6 +1,5 @@
 package com.brady.library.interfaces;
 
-import android.app.Application;
 import android.content.Context;
 import android.widget.ImageView;
 
@@ -15,7 +14,7 @@ public interface ILoadImage {
 	/**
 	 * @param con
      */
-	void build(Application con);
+	void build(Context con);
 
 	/**
 	 * @param iv
